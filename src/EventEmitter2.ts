@@ -9,17 +9,18 @@ export class EventEmitter2 {
     }
   }
 
-  on(name: string, cb: () => any) {
+  on(name: string, cb: () => any): any {
     if (this.state[name]) {
       this.state[name].push(cb);
     } else {
       this.state[name] = [cb];
     }
+
     return {
       unsubscribe: () => {
         this.state[name] = this.state[name]
-          .filter((item: any) => item !== cb)),
+          .filter((item: any) => (item !== cb));
       },
-    };
+    }
   }
 }

@@ -8,3 +8,6 @@ public
 *.log
 dist
 .history
+env.dev.json
+env.prod.json
+env.test.json
